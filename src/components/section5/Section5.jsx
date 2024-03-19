@@ -3,7 +3,7 @@ import React from "react";
 
 const Section5 = () => {
   return (
-    <div className="pb-6 sm:pb-8 lg:pb-8">
+    <section className="pb-6 sm:pb-8 lg:pb-8">
       <div className="icon-two">
         <Image
           className="icon-two-two"
@@ -80,7 +80,7 @@ const Section5 = () => {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 };
 

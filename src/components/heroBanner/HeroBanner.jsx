@@ -3,7 +3,7 @@ import styles from "./heroBanner.module.css";
 
 const HeroBanner = () => {
   return (
-    <div className={styles.heroBanner} id="home">
+    <section className={styles.heroBanner} id="home">
       <div id="carouselExampleIndicators" className="carousel slide">
         <div className="carousel-indicators">
           <button
@@ -93,7 +93,7 @@ const HeroBanner = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

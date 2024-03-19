@@ -157,10 +157,10 @@ const Footer = () => {
         className="text-center p-3 text-white text-lg foo-bottom"
         style={{ backgroundColor: "#4B4B4B" }}
       >
-        © Copyright <span id="currentYear"></span>,
-        <a className="text-white" href="https://www.slim24pro.com/">
+        © Copyright <span id="currentYear">2024</span>,{" "}
+        <a className="text-white" href="/">
           Slim24Pro
-        </a>
+        </a>{" "}
         All rights reserved.
       </div>
       <a id="cta" href="tel:+919229337811">

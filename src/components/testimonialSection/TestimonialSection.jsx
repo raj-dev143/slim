@@ -1,10 +1,74 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const ThumbnailWithVideo = ({ videoId, onClick }) => {
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+
+  return (
+    <div className="thumbColumn">
+      <img
+        src={thumbnailUrl}
+        alt="Thumbnail"
+        style={{ cursor: "pointer" }}
+        onClick={() => onClick(videoId)}
+      />
+      <div className="thumbPlay">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="white"
+          onClick={() => onClick(videoId)}
+        >
+          <path d="M8 5v14l11-7z" />
+          <path d="M0 0h24v24H0z" fill="none" />
+        </svg>
+      </div>
+    </div>
+  );
+};
+
+const PopupVideo = ({ videoId, onClose }) => {
+  const videoUrl = `https://www.youtube.com/embed/${videoId}`;
+
+  return (
+    <div className="popup">
+      <div className="popup-content">
+        <iframe
+          width="560"
+          height="315"
+          src={videoUrl}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <button className="closePop" onClick={onClose}>
+          x
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const TestimonialSection = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedVideoId, setSelectedVideoId] = useState("");
+
+  const openPopup = (videoId) => {
+    setSelectedVideoId(videoId);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setSelectedVideoId("");
+  };
+
   useEffect(() => {
     AOS.init(); // Initialize AOS when the component mounts
   }, []);
@@ -164,114 +228,30 @@ const TestimonialSection = () => {
                 <span className="fnt-color font-normal ml-3">(112)</span>
               </div>
             </div>
-            <div
-              className="col-md-4 col-lg-5 text-center flex justify-center gap-1 rounded-lg cc-review-col-last px-3"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
+            <div className="col-md-4 col-lg-5 text-center flex justify-center gap-1 rounded-lg cc-review-col-last px-3">
               <div className="video-iframe">
                 <div className="row">
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/_b-D9i3Er2w"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video1.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video5"
-                        width="183"
-                        height="103"
+                  {showPopup && (
+                    <PopupVideo
+                      videoId={selectedVideoId}
+                      onClose={closePopup}
+                    />
+                  )}
+                  <div className="thumbnails">
+                    {[
+                      "_b-D9i3Er2w",
+                      "vz0X-kgqalI",
+                      "deEntNFlGGI",
+                      "Ve9S0UNE944",
+                      "_u6Pf9Mw-Lo",
+                      "hEjQchCGO1s",
+                    ].map((videoId, index) => (
+                      <ThumbnailWithVideo
+                        key={index}
+                        videoId={videoId}
+                        onClick={openPopup}
                       />
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/vz0X-kgqalI"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video2.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video3"
-                        width="183"
-                        height="103"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/deEntNFlGGI"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video3.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video4"
-                        width="183"
-                        height="103"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/Ve9S0UNE944"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video4.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video"
-                        width="183"
-                        height="103"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/_u6Pf9Mw-Lo"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video5.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video1"
-                        width="183"
-                        height="103"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div
-                      className="video-btn"
-                      data-toggle="modal"
-                      data-target="#MakeModal"
-                      data-src="https://www.youtube.com/embed/hEjQchCGO1s"
-                    >
-                      <Image
-                        className="img-fluid"
-                        src="/video6.webp"
-                        title="Slim24 Pro"
-                        alt="Slim24 Pro Video2"
-                        width="183"
-                        height="103"
-                      />
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

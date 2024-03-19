@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.css";
 import BootstrapClient from "@/BootstrapClient";
 import "./globals.css";
-import Header from "./Header";
+import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Slim24 Pro Meal Replacement Formula | Weight Loss Powder",
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <body className="font-bebas-neue">
         <Header />
         {children}

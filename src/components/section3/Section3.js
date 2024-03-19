@@ -3,7 +3,7 @@ import SliderCaro from "@/components/section3/SliderCaro";
 
 const Section3 = () => {
   return (
-    <div className="pt-3 pb-5 relative overflow-hidden">
+    <section className="pt-3 pb-5 relative overflow-hidden">
       <div className="container">
         <div className="row">
           <div className="col-md-12 py-5 hidden md:block">
@@ -37,7 +37,7 @@ const Section3 = () => {
         </div>
         <SliderCaro />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@ import React from "react";
 
 const Section1 = () => {
   return (
-    <div className="py-6 sm:py-10 lg:pt-10">
+    <section className="py-6 sm:py-10 lg:pt-10">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <section className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16 items-center">
           <div
@@ -41,7 +41,7 @@ const Section1 = () => {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -43,17 +43,17 @@ const VideoCaro = () => {
     <div className="slider-container">
       <Slider {...settings}>
         <div className="p-md-4 p-3 text-center">
-          <video className="video-bottom">
+          <video className="video-bottom" controls autoPlay loop muted>
             <source src="/video1.mp4" />
           </video>
         </div>
         <div className="p-md-4 p-3 text-center">
-          <video className="video-bottom">
+          <video className="video-bottom" controls autoPlay loop muted>
             <source src="/video2.mp4" />
           </video>
         </div>
         <div className="p-md-4 p-3 text-center">
-          <video className="video-bottom">
+          <video className="video-bottom" controls autoPlay loop muted>
             <source src="/video3.mp4" />
           </video>
         </div>

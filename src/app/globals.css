@@ -482,6 +482,95 @@ footer {
     border-radius: 40px 40px 40px 40px;
 }
 
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.popup .popup-content {
+    max-width: 500px;
+    margin: 1.75rem auto;
+    background-color: #fff;
+    border: 4px solid #fff;
+    border-radius: 3px;
+    position: relative;
+}
+
+.popup .popup-content iframe {
+    width: 100%;
+    height: 277px;
+}
+
+.popup .popup-content .closePop {
+    position: absolute;
+    right: -29px;
+    top: -4px;
+    font-size: 17px;
+    padding: 0;
+    width: 28px;
+    height: 33px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    z-index: 1;
+    background: #fff;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #000;
+    font-family: 'poppinsmedium';
+}
+
+.video-iframe .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+
+.video-iframe .thumbnails .thumbColumn {
+    background-color: #000;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-iframe .thumbnails .thumbColumn:hover img {
+    opacity: 0.75;
+}
+
+.video-iframe .thumbnails .thumbColumn img {
+    margin-top: -17px;
+    transition: 0.5s;
+    margin-bottom: -17px
+}
+
+.thumbPlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-iframe .thumbnails .thumbColumn svg {
+    background-color: red;
+    width: 38px;
+    height: 27px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+#testimonial,
+#contact,
+#aboutus,
+#ordernow {
+    scroll-margin-top: 100px;
+}
+
 /* Mobile View */
 @media screen and (min-width: 250px) and (max-width: 480px) {
     .grid-footer {
@@ -506,6 +595,11 @@ footer {
 @media (max-width: 767px) {
     #cta {
         display: block;
+    }
+
+    .grid-footer .px-16 {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 

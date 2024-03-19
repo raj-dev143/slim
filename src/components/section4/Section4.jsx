@@ -2,7 +2,7 @@ import React from "react";
 
 const Section4 = () => {
   return (
-    <div className="hidden md:block 2xl:py-10 xl:py-10 lg:py-10 md:py-10 ">
+    <section className="hidden md:block 2xl:py-10 xl:py-10 lg:py-10 md:py-10 ">
       <div className="2xl:py-10 xl:py-10 lg:py-10 md:py-10 back-img">
         <h2 className="container bebas tracking-wide text-white text-3xl sm:text-4xl md:text-4xl font-medium mb-3 md:mb-12 text-start text-uppercase">
           Benefits of Meal Replacement Formula
@@ -26,7 +26,7 @@ const Section4 = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 
